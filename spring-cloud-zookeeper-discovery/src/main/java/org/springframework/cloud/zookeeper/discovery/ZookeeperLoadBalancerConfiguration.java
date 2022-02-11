@@ -47,6 +47,7 @@ public class ZookeeperLoadBalancerConfiguration {
 			DiscoveryClient discoveryClient, Environment env,
 			ApplicationContext context,
 			ZookeeperDependencies zookeeperDependencies) {
+		//pi 创建一个DiscoveryClientServiceInstanceListSupplier, 能够从 zk 实例列表中获取到相应的实例
 		DiscoveryClientServiceInstanceListSupplier firstDelegate = new DiscoveryClientServiceInstanceListSupplier(
 				discoveryClient, env);
 		ZookeeperServiceInstanceListSupplier secondDelegate = new ZookeeperServiceInstanceListSupplier(firstDelegate,

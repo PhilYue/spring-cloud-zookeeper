@@ -61,6 +61,9 @@ public class SampleZookeeperApplication {
 	@Autowired
 	private AppClient appClient;
 
+	@Autowired
+	private PiXiuServerAppClient piXiuServerAppClient;
+
 	@Autowired(required = false)
 	private Registration registration;
 
@@ -73,12 +76,17 @@ public class SampleZookeeperApplication {
 
 	@RequestMapping("/hi")
 	public String hi() {
-		return "Hello World! from " + this.registration;
+		return "111111- Hello World! from " + this.registration;
 	}
 
 	@RequestMapping("/self")
 	public String self() {
 		return this.appClient.hi();
+	}
+
+	@RequestMapping("/hello")
+	public String hello() {
+		return this.piXiuServerAppClient.hi();
 	}
 
 	@RequestMapping("/myenv")
@@ -109,4 +117,11 @@ public class SampleZookeeperApplication {
 
 	}
 
+	@FeignClient("pixiu-springcloud-server")
+	interface PiXiuServerAppClient {
+
+		@RequestMapping(path = "/hi", method = RequestMethod.GET)
+		String hi();
+
+	}
 }

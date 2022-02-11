@@ -51,6 +51,7 @@ public class DefaultServiceDiscoveryCustomizer implements ServiceDiscoveryCustom
 				.client(this.curator)
 				.basePath(this.properties.getRoot())
 				.serializer(this.instanceSerializer)
+				.watchInstances(true)
 				.build();
 		// @formatter:on
 	}
