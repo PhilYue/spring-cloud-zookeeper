@@ -39,6 +39,8 @@
 		<module>spring-cloud-starter-zookeeper-discovery</module>
 		<module>spring-cloud-starter-zookeeper-all</module>
 		<module>spring-cloud-zookeeper-sample</module>
+		<module>spring-cloud-zookeeper-sample1</module>
+		<module>spring-cloud-zookeeper-sample2</module>
 		<module>docs</module>
 	</modules>
 
